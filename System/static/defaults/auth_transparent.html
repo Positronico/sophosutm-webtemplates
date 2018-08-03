@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+
+<html lang="en">
+	<head>
+		<title><#http/transparent_auth_subject#></title>
+
+		<style type="text/css">
+			html {
+				font-family: "Helvetica Neue", "Helvetica", "Arial";
+				font-size: 12px;
+				color: #5a5a5a;
+			}
+
+			body {
+				width: 800px;
+				margin: auto;
+			}
+
+			h1 {
+				font-size: 20px;
+			}
+
+			h2 {
+				font-size: 17px;
+			}
+
+			h3 {
+				font-size: 15px;
+			}
+
+			h1, h2, h3 {
+				margin: 10px 0;
+				font-weight: bold;
+			}
+
+			h1 > small, h2 > small, h3 > small {
+				display: block;
+				font-size: 13px;
+				padding-top: 8px;
+			}
+
+			.page-header {
+				border-bottom: 1px solid #dddddd;
+				margin: 20px 0;
+			}
+
+			.page-footer {
+				border-top: 1px solid #dddddd;
+				margin: 20px 0;
+				text-align: center;
+			}
+
+			div.row {
+				width: 800px;
+				padding-left: 15px;
+				line-height: 20px;
+			}
+
+			div.row:after {
+				content: "";
+				clear: both;
+				display: block;
+			}
+
+			form div.row {
+				padding-top: 15px;
+			}
+
+			div[class*="span"] {
+				float: left;
+				margin-right: 15px;
+			}
+
+			div.span1 {
+				width: 85px;
+			}
+
+			div.span2 {
+				width: 140px;
+			}
+
+			div.span3 {
+				width: 285px;
+			}
+
+			div.span4 {
+				width: 385px;
+			}
+
+			div.span5 {
+				width: 485px;
+			}
+
+			div.span6 {
+				width: 585px;
+			}
+
+			div.span7 {
+				width: 685px;
+			}
+
+			div.span8 {
+				width: 785px;
+			}
+
+			div.offset1 {
+				margin-left: 100px;
+			}
+
+			div.offset2 {
+				margin-left: 200px;
+			}
+
+			div.offset3 {
+				margin-left: 300px;
+			}
+
+			div.offset4 {
+				margin-left: 400px;
+			}
+
+			div.offset5 {
+				margin-left: 500px;
+			}
+
+			div.offset6 {
+				margin-left: 600px;
+			}
+
+			div.offset7 {
+				margin-left: 700px;
+			}
+
+			.right {
+				text-align: right;
+			}
+
+			.label {
+				font-weight: bold;
+				font-size: 18px;
+			}
+
+			.button {
+				background-color: #007AC6;
+				border-radius: 4px;
+				cursor: pointer;
+				color: white;
+				padding: 6px 12px;
+				font-weight: bold;
+				font-size: 14px;
+				text-decoration: none;
+				text-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
+				border: 0;
+			}
+
+			.button:hover {
+				background-color: #005F9D;
+			}
+
+			.error {
+				color: #DF0101;
+				margin-top: 5px;
+				font-weight: bold;
+				font-size: 18px;
+			}
+		</style>
+	<script type="text/javascript" src="<?protocol?>://<?host?>/static/validation.js"></script></head>
+
+	<body>
+		<form action="/login" method="POST">
+			<div class="page-header row">
+				<div class="span1">
+					<h1>
+						<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+							<g>
+								<path d="M224,160h85.333c5.888,0,10.667-4.779,10.667-10.667V64c0-5.888-4.779-10.667-10.667-10.667H224     c-5.888,0-10.667,4.779-10.667,10.667v85.333C213.333,155.221,218.112,160,224,160z" style="fill: rgb(0, 122, 198);"></path>
+								<path d="M458.667,117.333H352c-5.888,0-10.667,4.779-10.667,10.667v21.333c0,17.643-14.357,32-32,32H224     c-17.643,0-32-14.357-32-32V128c0-5.888-4.779-10.667-10.667-10.667h-128C23.915,117.333,0,141.269,0,170.667v234.667     c0,29.397,23.915,53.333,53.333,53.333h405.333c29.419,0,53.333-23.936,53.333-53.333V170.667     C512,141.269,488.085,117.333,458.667,117.333z M242.24,382.229c-0.021,0.021-0.064,0.064-0.085,0.085     C220.949,403.115,191.957,416,160,416c-32.064,0-61.141-12.949-82.347-33.877c0.064,0.064,0.149,0.107,0.213,0.171     c-0.277-0.256-0.576-0.491-0.853-0.768c-21.205-21.227-34.347-50.539-34.347-82.859c0-64.704,52.651-117.333,117.333-117.333     s117.333,52.629,117.333,117.333C277.333,331.349,263.872,360.939,242.24,382.229z M458.667,373.333H309.333     c-5.888,0-10.667-4.779-10.667-10.667S303.445,352,309.333,352h149.333c5.888,0,10.667,4.779,10.667,10.667     S464.555,373.333,458.667,373.333z M458.667,309.333H309.333c-5.888,0-10.667-4.779-10.667-10.667S303.445,288,309.333,288     h149.333c5.888,0,10.667,4.779,10.667,10.667S464.555,309.333,458.667,309.333z M458.667,245.333H309.333     c-5.888,0-10.667-4.779-10.667-10.667S303.445,224,309.333,224h149.333c5.888,0,10.667,4.779,10.667,10.667     S464.555,245.333,458.667,245.333z" style="fill: rgb(0, 122, 198);"></path>
+								<path d="M195.563,316.821c10.837-9.771,17.771-23.765,17.771-39.488C213.333,247.872,189.461,224,160,224     s-53.333,23.872-53.333,53.333c0,15.723,6.933,29.717,17.771,39.488c-17.515,7.659-32.405,20.757-42.24,37.653     c17.451,24.235,45.717,40.192,77.803,40.192s60.352-15.957,77.803-40.192C227.968,337.579,213.077,324.48,195.563,316.821z" style="fill: rgb(0, 122, 198);"></path>
+							</g>
+						</svg>
+					</h1>
+				</div>
+
+				<div class="span4">
+					<h1><br/>
+						<#http/transparent_auth_subject#>
+						<small><#http/transparent_auth_desc#></small>
+					</h1>
+				</div>
+
+				<div class="offset1 span2"><br/>
+					<img src="<?protocol?>://<?host?>/static/logo.png" alt="<#company_text#>" />
+				</div>
+			</div>
+
+		<?terms_of_use?>
+			<div class="row">
+				<div class="span2 label">
+					Termos de uso:
+				</div>
+
+				<div class="span4">
+					<#http/transparent_auth_terms#>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="span2 label">
+					De acordo:
+				</div>
+
+				<div class="span6">
+					<input id="accept" type="checkbox" value="accept" name="accept" />
+				</div>
+			</div>
+		<?terms_of_use_end?>
+
+			<div class="row">
+				<div class="span2 label">
+					Usu&aacute;rio:
+				</div>
+
+				<div class="span6">
+					<input type="text" name="user" />
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="span2 label">
+					Senha:
+				</div>
+
+				<div class="span6">
+					<input type="password" name="pass" />
+				</div>
+			</div>
+
+		<?guest_login?>
+			<div class="row">
+				<div class="span8 label">
+					<a href="<?protocol?>://<?host?>/login?user=&password=&guest=1">Entrar como convidado</a>
+				</div>
+			</div>
+		<?guest_login_end?>
+
+		<!--//
+			<div class="row">
+				<div class="span2 label">
+					Justificativa:
+				</div>
+
+				<div class="span6">
+					<?reason_input?>
+				</div>
+			</div>
+		//-->
+
+			<div class="row">
+				<div id="error" class="span6 error">
+				</div>
+
+				<div class="span2 right">
+					<input type="submit" class="button" value="Entrar" />
+				</div>
+			</div>
+		</form>
+
+		<div class="page-footer row">
+			<p><#squid/cache_admin_message#> <#squid/cache_admin#></p>
+		</div>
+
+		<script type="text/javascript">
+			var messages = {
+				TermsNotAccepted:       "Voc&ecirc; n&atilde;o aceitou os termos de uso",
+				InvalidLogin:           "As credenciais n&atilde;o foram reconhecidas",
+				OvverrideNotAllowed:    "Usu&aacute;rio n&atilde;o est&aacute; autorizado a liberar esta categoria",
+				ReasonNotSpecified:     "A justificativa de libera&ccedil;&atilde;o n&atilde;o foi fornecida"
+			};
+
+			var errorCode = getValidationError();
+
+			if (errorCode != "None") {
+				document.getElementById("error").innerHTML = messages[errorCode];
+			}
+		</script>
+	</body>
+</html>

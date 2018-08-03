@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+
+<html lang="en">
+	<head>
+		<title><?subject?></title>
+
+		<style type="text/css">
+			html {
+				font-family: "Helvetica Neue", "Helvetica", "Arial";
+				font-size: 12px;
+				color: #5a5a5a;
+			}
+			
+			body {
+				width: 800px;
+				margin: auto;
+			}
+			
+			h1 {
+				font-size: 20px;
+			}
+			
+			h2 {
+				font-size: 17px;
+			}
+			
+			h3 {
+				font-size: 15px;
+			}
+
+			h1, h2, h3 {
+				margin: 10px 0;
+				font-weight: bold;
+			}
+
+			h1 > small, h2 > small, h3 > small {
+				display: block;
+				font-size: 13px;
+				padding-top: 8px;
+			}
+			
+			.page-header {
+				border-bottom: 1px solid #dddddd;
+				margin: 20px 0;
+			}
+
+			.page-footer {
+				border-top: 1px solid #dddddd;
+				margin: 20px 0;
+				text-align: center;
+			}
+
+			div.row {
+				width: 800px;
+				padding-left: 15px;
+			}
+			
+			div.row:after {
+				content: "";
+				clear: both;
+				display: block;
+			}
+			
+			div[class*="span"] {
+				float: left;
+				margin-right: 15px;
+			}
+			
+			div.span1 {
+				width: 85px;
+			}
+			
+			div.span2 {
+				width: 185px;
+			}
+
+			div.span3 {
+				width: 285px;
+			}
+			
+			div.span4 {
+				width: 385px;
+			}
+
+			div.span5 {
+				width: 485px;
+			}
+			
+			div.span6 {
+				width: 585px;
+			}
+
+			div.span7 {
+				width: 685px;
+			}
+
+			div.span8 {
+				width: 785px;
+			}
+
+			div.offset1 {
+				margin-left: 100px;
+			}
+			
+			div.offset2 {
+				margin-left: 200px;
+			}
+
+			div.offset3 {
+				margin-left: 300px;
+			}
+			
+			div.offset4 {
+				margin-left: 400px;
+			}
+
+			div.offset5 {
+				margin-left: 500px;
+			}
+			
+			div.offset6 {
+				margin-left: 600px;
+			}
+			
+			div.offset7 {
+				margin-left: 700px;
+			}
+			
+			.right {
+				text-align: right;
+			}
+			
+			.label {
+				font-weight: bold;
+			}
+			
+			.button {
+				background-color: #0088bb;
+				border-radius: 4px;
+				cursor: pointer;				
+				color: white;
+				padding: 6px 12px;
+				font-weight: bold;
+				font-size: 14px;
+				text-decoration: none;
+				text-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
+				border: 0;
+			}
+			
+			.button:hover {
+				background-color: #0088cd;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="page-header row">
+			<div class="span1">
+				<h1>
+					<img src="<?image_path?>/warn.png" />
+				</h1>
+			</div>		
+
+			<div class="span4">
+				<h1>
+					<?subject?>
+					<small><?description?></small>
+				</h1>
+			</div>
+			
+			<div class="offset1 span2">
+				<img src="<?company_logo?>" alt="<?company_text?>" />
+			</div>
+		</div>
+		
+		<div class="row">
+			<h3>Details</h3>
+		</div>	
+
+		<?if_category?>
+			<div class="row">
+				<div class="span1 label">
+					Category:
+				</div>
+			
+				<div class="span5">
+					<span id="categoryName"></span>
+				</div>
+			</div>
+		
+			<script type="text/javascript">
+				var categories = {
+					100 : "Art/Culture/Heritage",
+					101 : "Alcohol",
+					102 : "Anonymizers",
+					103 : "Adult Topics",
+					104 : "Anonymizing Utilities",
+					105 : "Business",
+					106 : "Chat",
+					107 : "Computing / Internet",
+					108 : "Public Information",
+					109 : "Criminal Activities",
+					110 : "Drugs",
+					111 : "Education/Reference",
+					112 : "Entertainment",
+					113 : "Extreme",
+					114 : "Finance/Banking",
+					115 : "Gambling",
+					116 : "Games",
+					117 : "Government/Military",
+					118 : "Hacking/Computer Crime",
+					119 : "Health",
+					120 : "Humor/Comics",
+					121 : "Hate/Discrimination",
+					122 : "Instant Messaging",
+					123 : "Stock Trading",
+					124 : "Internet Radio/TV",
+					125 : "Job Search",
+					126 : "Information Security",
+					127 : "Dating/Social Networking",
+					128 : "Mobile Phone",
+					129 : "Media Downloads",
+					130 : "Malicious Sites",
+					131 : "Usenet News",
+					132 : "Nudity",
+					133 : "Non-Profit/Advocacy/NGO",
+					134 : "General News",
+					135 : "Cult / Ocult",
+					136 : "Online Shopping",
+					137 : "Provocative Attire",
+					138 : "P2P/File Sharing",
+					139 : "Politics/Opinion",
+					140 : "Personal Pages",
+					141 : "Portal Sites",
+					142 : "Remote Access",
+					143 : "Religion/Ideology",
+					144 : "Resource Sharing",
+					145 : "Search Engines",
+					146 : "Sports",
+					147 : "Streaming Media",
+					148 : "Shareware/Freeware",
+					149 : "Pornography",
+					150 : "Spyware/Adware",
+					151 : "Tobacco",
+					152 : "Travel",
+					153 : "Violence",
+					154 : "Web Ads",
+					155 : "Weapons",
+					156 : "Web Mail",
+					157 : "Web Phone",
+					158 : "Auctions/Classifieds",
+					159 : "Forum/Bulletin Boards",
+					160 : "Profanity",
+					161 : "School Cheating Information",
+					162 : "Sexual Materials",
+					163 : "Gruesome Content",
+					164 : "Visual Search Engine",
+					165 : "Technical/Business Forums",
+					166 : "Gambling Related",
+					167 : "Messaging",
+					168 : "Game/Cartoon Violence",
+					169 : "Phishing",
+					170 : "Personal Network Storage",
+					171 : "Spam URLs",
+					172 : "Interactive Web Applications",
+					173 : "Information Security New",
+					174 : "Fashion/Beauty",
+					175 : "Software/Hardware",
+					176 : "Illegal Software",
+					177 : "Content Server",
+					178 : "Internet Services",
+					179 : "Media Sharing",
+					180 : "Incidental Nudity",
+					181 : "Marketing/Merchandising",
+					183 : "Parked Domain",
+					184 : "Pharmacy",
+					185 : "Restaurants",
+					186 : "Real Estate",
+					187 : "Recreation/Hobbies",
+					188 : "Blogs/Wiki",
+					189 : "Digital Postcards",
+					190 : "Historical Revisionism",
+					191 : "Technical Information",
+					192 : "Dating/Personals",
+					193 : "Motor Vehicles",
+					194 : "Professional Networking",
+					195 : "Social Networking",
+					196 : "Text Translators",
+					197 : "Web Meetings",
+					198 : "Controversal Opinions",
+					199 : "Residential IP Addresses",
+					200 : "Browser Exploits",
+					201 : "Consumer Protection",
+					202 : "Illegal UK",
+					203 : "Major Global Religions",
+					204 : "Malicious Downloads",
+					205 : "Potential Unwanted Programs",
+					600 : "For Kids",
+					601 : "History",
+					602 : "Moderated",
+					603 : "Text/Spoken Only",
+					9998 : "Uncategorized",
+					9999 : "Categorization failed"
+				};
+
+				if (document.getElementById("categoryName") && categories["<?category?>"]) {
+					document.getElementById("categoryName").innerHTML = categories["<?category?>"];
+				}
+			</script>
+		<?if_category_end?>
+		
+		<?if_virus?>
+			<div class="row">
+				<div class="span1 label">
+					Virus name:
+				</div>
+			
+				<div class="span5">
+					<?virus_name?>
+				</div>
+			</div>
+		<?if_virus_end?>
+		
+		<?if_application?>
+			<div class="row">
+				<div class="span1 label">
+					Application name:
+				</div>
+			
+				<div class="span5">
+					<?application_name?>
+				</div>
+			</div>
+		<?if_application_end?>
+		
+		<div class="row">
+			<div class="span1 label">
+				URL:
+			</div>
+		
+			<div class="span5">
+				<?url?>
+			</div>
+
+			<div class="span2 right">
+				<a class="button" href="<?proceed_url?>">Proceed</a>
+			</div>
+		</div>
+
+		<div class="page-footer row">
+			<p><?admin_message?> <?admin_contact?></p>
+		</div>
+	</body>
+</html>

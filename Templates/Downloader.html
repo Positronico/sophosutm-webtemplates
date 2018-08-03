@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+
+<html lang="en">
+	<head>
+		<title><?download_subject?></title>
+	
+		<style type="text/css">
+			html {
+				font-family: "Helvetica Neue", "Helvetica", "Arial";
+				font-size: 12px;
+				color: #5a5a5a;
+			}
+			
+			body {
+				width: 800px;
+				margin: auto;
+			}
+			
+			h1 {
+				font-size: 20px;
+			}
+			
+			h2 {
+				font-size: 17px;
+			}
+			
+			h3 {
+				font-size: 15px;
+			}
+
+			h1, h2, h3 {
+				margin: 10px 0;
+				font-weight: bold;
+			}
+
+			h1 > small, h2 > small, h3 > small {
+				display: block;
+				font-size: 13px;
+				padding-top: 8px;
+			}
+			
+			.page-header {
+				border-bottom: 1px solid #dddddd;
+				margin: 20px 0;
+			}
+
+			.page-footer {
+				border-top: 1px solid #dddddd;
+				margin: 20px 0;
+				text-align: center;
+			}
+
+			div.row {
+				width: 800px;
+				padding-left: 15px;
+				line-height: 20px;
+			}
+			
+			div.row:after {
+				content: "";
+				clear: both;
+				display: block;
+			}
+
+			div[class*="span"] {
+				float: left;
+				margin-right: 15px;
+			}
+			
+			div.span1 {
+				width: 85px;
+			}
+			
+			div.span2 {
+				width: 185px;
+			}
+
+			div.span3 {
+				width: 285px;
+			}
+			
+			div.span4 {
+				width: 385px;
+			}
+
+			div.span5 {
+				width: 485px;
+			}
+			
+			div.span6 {
+				width: 585px;
+			}
+			
+			div.span7 {
+				width: 685px;
+			}
+			
+			div.span8 {
+				width: 785px;
+			}
+
+			div.offset1 {
+				margin-left: 100px;
+			}
+			
+			div.offset2 {
+				margin-left: 200px;
+			}
+
+			div.offset3 {
+				margin-left: 300px;
+			}
+			
+			div.offset4 {
+				margin-left: 400px;
+			}
+
+			div.offset5 {
+				margin-left: 500px;
+			}
+			
+			div.offset6 {
+				margin-left: 600px;
+			}
+			
+			div.offset7 {
+				margin-left: 700px;
+			}
+			
+			.right {
+				text-align: right;
+			}
+			
+			.label {
+				font-weight: bold;
+			}
+			
+			.button {
+				background-color: #0088bb;
+				border-radius: 4px;
+				cursor: pointer;				
+				color: white;
+				padding: 6px 12px;
+				font-weight: bold;
+				font-size: 14px;
+				text-decoration: none;
+				text-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
+				border: 0;
+			}
+			
+			.button:hover {
+				background-color: #0088cd;
+			}
+			
+			.progress-bg {
+				position: relative;
+				border: 1px solid #dddddd;
+				padding: 2px;
+				height: 24px;
+			}
+			
+			.progress-bar {
+				position: absolute;
+				height: 24px;
+				top: 2px;
+				left: 2px;
+				z-index: -1;
+				background-color: #0088cd;
+			}
+			
+			.progress-text {
+				margin-top: 6px;
+				text-align: center;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="page-header row">
+			<div class="span1">
+				<h1>
+					<img src="<?image_path?>/download.png" />
+				</h1>
+			</div>	
+				
+			<div class="offset5 span2">
+				<img src="<?company_logo?>" alt="<?company_text?>" />
+			</div>
+		</div>
+	
+	<?downloading?>
+		<div class="row">
+			<h2>
+				<?download_subject?>
+				<small><?download_description?></small>
+			</h2>
+		</div>
+		
+		<div class="row">
+			<div class="span2 label">
+				Download URL:
+			</div>
+		
+			<div class="span6">
+				<?url?>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="span2 label">
+				Downloading
+			</div>
+		
+			<div class="span6">
+				<?download_progress?> of <?download_size?> at a speed of <?download_speed?>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="span2 label">
+				Estimated time:
+			</div>
+		
+			<div class="span6">
+				<?download_time?>
+			</div>
+		</div>
+		
+		<div class="row">
+			<div class="span2 label">
+				Progress:
+			</div>
+
+			<div class="span6">
+				<?progress_bar?>
+			</div>
+		</div>
+	<?downloading_end?>
+	
+	<?scanning?>
+		<div class="row">
+			<h2>
+				<?scan_subject?>
+				<small><?scan_description?></small>
+			</h2>
+		</div>
+		
+		<div class="row">
+			<div class="span2 label">
+				Scan URL:
+			</div>
+		
+			<div class="span6">
+				<?url?>
+			</div>
+		</div>
+		
+		<div class="row">
+			<div class="span2 label">
+				Progress:
+			</div>
+		
+			<div class="span6">
+				<img src="<?image_path?>/spinner.gif" />
+			</div>
+		</div>
+	<?scanning_end?>
+	
+	<?ready?>
+		<div class="row">
+			<h2>
+				<?ready_subject?>
+				<small><?ready_description?></small>
+			</h2>
+		</div>
+		
+		<div class="row">
+			<div class="span1 label">
+				URL:
+			</div>
+		
+			<div class="span5">
+				<?url?>
+			</div>
+
+			<div class="span2 right">
+				<a class="button download-link" title="Download" href="#">Download Now</a>
+			</div>
+		</div>
+	<?ready_end?>
+	
+		<div class="page-footer row">
+			<p><?admin_message?> <?admin_contact?></p>
+		</div>
+	</body>
+</html>

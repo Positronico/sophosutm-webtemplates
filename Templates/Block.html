@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+
+<html lang="en">
+	<head>
+		<title><?subject?></title>
+
+		<style type="text/css">
+			html {
+				font-family: "Helvetica Neue", "Helvetica", "Arial";
+				font-size: 12px;
+				color: #5a5a5a;
+			}
+
+			body {
+				width: 800px;
+				margin: auto;
+			}
+
+			h1 {
+				font-size: 20px;
+			}
+
+			h2 {
+				font-size: 17px;
+			}
+
+			h3 {
+				font-size: 15px;
+			}
+
+			h1, h2, h3 {
+				margin: 10px 0;
+				font-weight: bold;
+			}
+
+			h1 > small, h2 > small, h3 > small {
+				display: block;
+				font-size: 13px;
+				padding-top: 8px;
+			}
+
+			.page-header {
+				border-bottom: 1px solid #dddddd;
+				margin: 20px 0;
+			}
+
+			.page-footer {
+				border-top: 1px solid #dddddd;
+				margin: 20px 0;
+				text-align: center;
+			}
+
+			div.row {
+				width: 800px;
+				padding-left: 15px;
+			}
+
+			div.row:after {
+				content: "";
+				clear: both;
+				display: block;
+			}
+
+			div[class*="span"] {
+				float: left;
+				margin-right: 15px;
+			}
+
+			div.span1 {
+				width: 85px;
+			}
+
+			div.span2 {
+				width: 185px;
+			}
+
+			div.span3 {
+				width: 285px;
+			}
+
+			div.span4 {
+				width: 385px;
+			}
+
+			div.span5 {
+				width: 485px;
+			}
+
+			div.span6 {
+				width: 585px;
+			}
+
+			div.span7 {
+				width: 685px;
+			}
+
+			div.span8 {
+				width: 785px;
+			}
+
+			div.offset1 {
+				margin-left: 100px;
+			}
+
+			div.offset2 {
+				margin-left: 200px;
+			}
+
+			div.offset3 {
+				margin-left: 300px;
+			}
+
+			div.offset4 {
+				margin-left: 400px;
+			}
+
+			div.offset5 {
+				margin-left: 500px;
+			}
+
+			div.offset6 {
+				margin-left: 600px;
+			}
+
+			div.offset7 {
+				margin-left: 700px;
+			}
+
+			.right {
+				text-align: right;
+			}
+
+			.label {
+				font-weight: bold;
+				font-size: 18px;
+			}
+
+			.button {
+				background-color: #0088bb;
+				border-radius: 4px;
+				cursor: pointer;
+				color: white;
+				padding: 6px 12px;
+				font-weight: bold;
+				font-size: 14px;
+				text-decoration: none;
+				text-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
+				border: 0;
+			}
+
+			textarea {
+	  		width: 400px;
+	  		height: 100px;
+				border: none;
+			}
+
+			.button:hover {
+				background-color: #0088cd;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="page-header row">
+			<div class="span1">
+				<h1>
+					<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+						 viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+					<path style="fill:#FD4E26;" d="M436.3,75.7C388.001,27.4,324.101,0,256,0S123.999,27.4,75.7,75.7S0,187.899,0,256
+						c0,34.2,7.599,67.2,20.2,97.5c12.6,30.599,31.2,58.5,55.5,82.8C124,484.6,187.9,512,256,512s132.001-27.4,180.3-75.7
+						C484.6,387.999,512,324.099,512,256C512,187.899,484.6,123.999,436.3,75.7z"/>
+					<path style="fill:#FD3018;" d="M436.3,75.7C388.001,27.4,324.101,0,256,0v15v15v452v15v15c68.101,0,132.001-27.4,180.3-75.7
+						C484.6,387.999,512,324.099,512,256C512,187.899,484.6,123.999,436.3,75.7z"/>
+					<path style="fill:#CAE8F9;" d="M406,241v30c0,8.399-6.599,15-15,15H121c-8.401,0-15-6.601-15-15v-30c0-8.401,6.599-15,15-15h270
+						C399.401,226,406,232.599,406,241z"/>
+					<path style="fill:#B7E0F6;" d="M406,241v30c0,8.399-6.599,15-15,15H256v-60h135C399.401,226,406,232.599,406,241z"/>
+					</svg>
+				</h1>
+			</div>
+
+			<div class="span4">
+				<h1><br/>
+					<?subject?>
+					<small><?description?></small>
+				</h1>
+			</div>
+
+			<div class="offset1 span2">
+				<img src="<?company_logo?>" alt="<?company_text?>" />
+			</div>
+		</div>
+
+		<div class="row">
+			<h1>Detalhes</h1>
+		</div>
+
+		<?if_category?>
+			<div class="row">
+				<div class="span2 label">
+					Categoria:
+				</div>
+
+				<div class="span6 label">
+					<span id="categoryName"></span>
+				</div>
+			</div>
+
+			<script type="text/javascript">
+				var categories = {
+					100 : "Arte/Cultura/Hist&oacute;ria",
+					101 : "Bebidas Alco&oacute;licas",
+					102 : "Anonimzadores de Acessos",
+					103 : "Conte&uacute;do Adulto",
+					104 : "Utilit&aacute;rios de Anonimidade",
+					105 : "Neg&oacute;cios",
+					106 : "Bate-Papo",
+					107 : "Computadores/Internet",
+					108 : "Informa&ccedil;&atilde;o P&uacute;blica",
+					109 : "Atividades Criminais",
+					110 : "Drogas",
+					111 : "Educa&ccedil;&atilde;o/Refer&ecirc;ncia",
+					112 : "Entretenimento",
+					113 : "Extremismo",
+					114 : "Finan&ccedil;as/Bancos",
+					115 : "Jogos de Azar",
+					116 : "Jogos",
+					117 : "Governo/Militares",
+					118 : "Hacking/Crimis Digitais",
+					119 : "Sa&uacute;de",
+					120 : "Humor/Com&eacute;dia",
+					121 : "&Oacute;dio/Discrimina&ccedil;&atilde;o",
+					122 : "Mensagens Instant&acirc;neas",
+					123 : "Trading/Mercado de A&ccedil;&otilde;es",
+					124 : "R&aacute;dio/TV via Internet",
+					125 : "Emprego/Recoloca&ccedil;&atilde;o",
+					126 : "Seguran&ccedil;a da Informa&ccedil;&atilde;o",
+					127 : "Encontros/Redes Sociais",
+					128 : "Telefonia M&oacute;vel",
+					129 : "Downloads de M&iacute;dias",
+					130 : "Sites Maliciosos",
+					131 : "Usenet News",
+					132 : "Nudez",
+					133 : "ONGs/Ativismo",
+					134 : "Not&iacute;cias em Geral",
+					135 : "Cult/Occult",
+					136 : "Online Shopping",
+					137 : "Trajes Provocativos",
+					138 : "P2P/File Sharing",
+					139 : "Opini&otilde;es Pol&iacute;ticas",
+					140 : "Sites Pessoais",
+					141 : "Sites de Portais",
+					142 : "Acesso Remoto",
+					143 : "Ideologia/Religi&atilde;o",
+					144 : "Compartilhamento de Recursos Computacionais",
+					145 : "Ferramentas de Pesquisa",
+					146 : "Esportes",
+					147 : "Streaming Media",
+					148 : "Shareware/Freeware",
+					149 : "Pornografia",
+					150 : "Spyware/Adware",
+					151 : "Tabaco",
+					152 : "Viagens",
+					153 : "Viol&ecirc;ncia",
+					154 : "Web Ads",
+					155 : "Armas",
+					156 : "Web Mail",
+					157 : "Web Phone",
+					158 : "Leil&otilde;es/Classificados",
+					159 : "Forum/Bulletin Boards",
+					160 : "Blasf&ecirc;mia/Profana&ccedil;&atilde;o",
+					161 : "Fraude Escolar",
+					162 : "Materiais de Cunho Sexual",
+					163 : "Material Repulsivo",
+					164 : "Pesquisa de Imagens",
+					165 : "F&oacute;runs T&eacute;cnicos/Neg&oacute;cios",
+					166 : "Relacionados a Jogos de Azar",
+					167 : "Mensagens",
+					168 : "Viol&ecirc;ncia em Jogos/Desenhos",
+					169 : "Phishing",
+					170 : "Personal Network Storage",
+					171 : "Spam URLs",
+					172 : "Aplica&ccedil;&otilde;es Web Interativas",
+					173 : "Not&iacute;cias de Seguran&ccedil;a da Informa&ccedil;&atilde;o",
+					174 : "Moda/Beleza",
+					175 : "Software/Hardware",
+					176 : "Software Ilegal",
+					177 : "Servidores de Conte&uacute;do",
+					178 : "Internet Services",
+					179 : "Media Sharing",
+					180 : "Nudez Incidental",
+					181 : "Marketing/Merchandising",
+					183 : "Dom&iacute;nios Reservados",
+					184 : "Ind&uacute;stria Farmac&ecirc;utica",
+					185 : "Restaurantes",
+					186 : "Mercado Imobili&aacute;rio",
+					187 : "Hobbies/Divers&atilde;o",
+					188 : "Blogs/Wiki",
+					189 : "Cart&otilde;es Postais Digitais",
+					190 : "Revisionismo Hist&oacute;rico",
+					191 : "Informa&ccedil;&otilde;es T&eacute;cnicas",
+					192 : "Sites de Encontros/Namoro",
+					193 : "Ve&iacute;culos Automotores",
+					194 : "Networking Profissional",
+					195 : "Redes Sociais",
+					196 : "Tradutores de Textos",
+					197 : "Web Meetings",
+					198 : "Opini&otilde;es Controversas",
+					199 : "IP Residencial",
+					200 : "Browser Exploits",
+					201 : "Prote&ccedil;&atilde;o do Consumidor",
+					202 : "Illegal UK",
+					203 : "Principais Religi&otilde;es Globais",
+					204 : "Downloads de Sofware Malicioso",
+					205 : "Programas Potencialmente Indesejados",
+					600 : "Conte&uacute;do Dedicado a Crian&ccedil;as",
+					601 : "Hist&oacute;ria",
+					602 : "Moderado",
+					603 : "Somente Texto/Narra&ccedil;&atilde;o",
+					9998 : "Sem Categoria",
+					9999 : "Erro de Categoriza&ccedil;&atilde;o"
+				};
+
+				if (document.getElementById("categoryName") && categories["<?category?>"]) {
+					document.getElementById("categoryName").innerHTML = categories["<?category?>"];
+				}
+			</script>
+		<?if_category_end?>
+
+		<?if_virus?>
+			<div class="row">
+				<div class="span2 label">
+					V&iacute;rus:
+				</div>
+
+				<div class="span6 label">
+					<?virus_name?>
+				</div>
+			</div>
+		<?if_virus_end?>
+
+		<?if_application?>
+			<div class="row">
+				<div class="span2 label">
+					Aplica&ccedil;&atilde;o:
+				</div>
+
+				<div class="span6 label">
+					<?application_name?>
+				</div>
+			</div>
+		<?if_application_end?>
+
+		<div class="row">
+			<div class="span2 label">
+				URL Bloqueada:
+			</div>
+
+			<div class="span6 label">
+				<textarea readonly><?url?></textarea>
+			</div>
+
+			<?override_enabled?>
+				<div class="span2 right">
+					<a class="button" title="Esta libera&ccedil;&atilde;o ser&aacute; auditada" href="<?override_url?>">Liberar URL</a>
+				</div>
+			<?override_enabled_end?>
+		</div>
+
+		<div class="page-footer row">
+			<p><?admin_message?> <?admin_contact?></p>
+		</div>
+	</body>
+</html>
